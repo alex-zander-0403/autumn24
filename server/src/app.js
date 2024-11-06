@@ -9,6 +9,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static('public'));
 
+//
 app.use('/api/posts', postRouter);
 
 module.exports = app;

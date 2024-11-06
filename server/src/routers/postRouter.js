@@ -27,7 +27,7 @@ postRouter
     }
   });
 
-postRouter.router('/:id').delete(checkId, async (req, res) => {
+postRouter.route('/:id').delete(checkId, async (req, res) => {
   try {
     const { id } = res.locals; // через checkId
     await Post.destroy({ where: { id } });
@@ -37,3 +37,5 @@ postRouter.router('/:id').delete(checkId, async (req, res) => {
     res.status(500).json({ message: error.message, text: 'Ошибка удаления' });
   }
 });
+
+module.exports = postRouter;
